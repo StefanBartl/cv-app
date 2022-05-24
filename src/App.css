@@ -125,9 +125,16 @@ select {
     
 }
 
-.dates {
+.datesInputs {
   display: flex;
   gap: .5rem;
+}
+
+.dates input {
+  text-align: center;
+  font-weight: lighter;
+  font-size: small;
+  border: none;
 }
 
 .namesDiv{
@@ -147,7 +154,7 @@ select {
 }
 
 .adressDiv > input[type='number']{
-  width: 6ch;
+  width: 8ch;
 }
 
 .contactDiv{
@@ -164,4 +171,8 @@ select {
   align-self: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.dates > input[type="submit"]:hover{
+  border: solid 1px black;
 }
