@@ -1,5 +1,5 @@
 import React from 'react';
-import Dates from './components/Dates';
+import GeneralInformations from './components/GeneralInformations';
 import './App.css';
 
 export default function App() {
@@ -16,9 +16,11 @@ export default function App() {
   // console.log(submittedData);
 
   function collectData(data){
+    // Get array with submitted keys
+    let keyArray =  Object.keys(data);
 
-    // ? Get submitted data from 'Dates'
-    if(data.firstName){
+    //  Test if 'firstName'-key is in sended data. If so, push it to the data object
+    if(keyArray.indexOf("firstName") !== -1){
       setSubmittedData(prevData => {
         return {
           ...prevData,
@@ -31,7 +33,7 @@ export default function App() {
           email: data.email  
         }
       })
-      // console.log("Data from Dates receivedl");
+       console.log("Data from GeneralInformations received.");
     };
 
 };
@@ -40,7 +42,7 @@ export default function App() {
   return (
     <div className="App">
       <h1 className='title'>WKD Steve's CV-APP</h1>
-      <Dates sendData={collectData}/>
+      <GeneralInformations sendData={collectData}/>
     </div>
   );
 }

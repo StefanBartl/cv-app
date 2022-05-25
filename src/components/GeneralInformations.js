@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Dates(props){
+export default function GeneralInformations(props){
 
-    const [ dates, setDates ] = React.useState(
+    const [ infos, setInfos ] = React.useState(
         {
             firstName: "", 
             lastName: "", 
@@ -14,12 +14,12 @@ export default function Dates(props){
       }
     );
 
-    function datesEvent(event){
+    function infosEvent(event){
             const { name, value} = event.target;
 
-            setDates(prevDates => {
+            setInfos(prevInfos => {
                 return {
-                            ...prevDates,
+                            ...prevInfos,
                             [name]: value
                 }
             });
@@ -27,12 +27,12 @@ export default function Dates(props){
 
     function handleSubmit(event){
         // ? Send actual values from the input fields to App component
-        event.preventDefault();
-        props.sendData(dates)
+        event.preventDefault(); 
+        props.sendData(infos)
     };
 
     let editState = false;
-    function edit(event){
+    function edit(){
 
         // Toggle edit state
         editState === false ? editState = true : editState = false;
@@ -48,31 +48,31 @@ export default function Dates(props){
     };
 
     return (
-        <div className='dates'>
+        <div className='generalInfos'>
 
-            <div className='datesInputs'>
+            <div className='generalInfosInputs'>
 
                 <div className='namesDiv'>
                     <p htmlFor='firstName'>First name</p>
-                    <input type='text' name='firstName' className='inputFields' placeholder='John' value={dates.firstName} onChange={datesEvent}  />
+                    <input type='text' name='firstName' className='inputFields' placeholder='John' value={infos.firstName} onChange={infosEvent}  />
                     <p htmlFor='firstName'>Last name</p>
-                    <input type='text' name='lastName' className='inputFields' placeholder='Doe' value={dates.lastName} onChange={datesEvent} />
+                    <input type='text' name='lastName' className='inputFields' placeholder='Doe' value={infos.lastName} onChange={infosEvent} />
                 </div>
 
                 <div className='adressDiv'>
                     <p htmlFor='adress'>Adress</p>
-                    <input type='text' name='adress' className='inputFields' placeholder='Empty Street 10' value={dates.adress} onChange={datesEvent} />
+                    <input type='text' name='adress' className='inputFields' placeholder='Empty Street 10' value={infos.adress} onChange={infosEvent} />
                     <p htmlFor='postCode'>Post code</p>
-                    <input type='number' name='postCode' className='inputFields'  placeholder='10909' value={dates.postCode} onChange={datesEvent} />
+                    <input type='number' name='postCode' className='inputFields'  placeholder='10909' value={infos.postCode} onChange={infosEvent} />
                     <p htmlFor='city'>City</p>
-                    <input type='text' name='city' className='inputFields' placeholder='Gotham City' value={dates.city} onChange={datesEvent} />
+                    <input type='text' name='city' className='inputFields' placeholder='Gotham City' value={infos.city} onChange={infosEvent} />
                 </div>
 
                 <div className='contactDiv'>
                     <p htmlFor='phone'>Phone</p>
-                    <input type='number' name='phone' className='inputFields' placeholder='43 664 7878111' value={dates.phone} onChange={datesEvent}/>
+                    <input type='number' name='phone' className='inputFields' placeholder='43 664 7878111' value={infos.phone} onChange={infosEvent}/>
                     <p htmlFor='email'>Email</p>
-                    <input type='email' name='email' className='inputFields' placeholder='joe.doe@mail.com' value={dates.email} onChange={datesEvent} />
+                    <input type='email' name='email' className='inputFields' placeholder='joe.doe@mail.com' value={infos.email} onChange={infosEvent} />
                 </div>  
 
                 <input type='button' name='edit' value="edit" onClick={edit} />
