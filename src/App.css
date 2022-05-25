@@ -185,6 +185,7 @@ body {
   width: 20ch;
 }
 
+.datesInputs > input[type="button"],
 .datesInputs > input[type="submit"]{
   height: 4rem;
   aspect-ratio: 1/1;
@@ -192,6 +193,21 @@ body {
   border-radius: 10%;
 }
 
+.datesInputs > input[type="button"]:hover,
 .datesInputs > input[type="submit"]:hover{
   border: solid 1px black;
+  transform: scale(1.1);
+}
+
+.inputFields{
+  cursor: none;
+  pointer-events: none;
+}
+
+.editInputFields {
+  cursor: pointer;
+  pointer-events: all;
+  transform: scale(1.1);
+  background-color: var(--wkd-lightgrey);
+  color: var(--wkd-white);
 }
