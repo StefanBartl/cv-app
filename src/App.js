@@ -1,6 +1,11 @@
 import React from 'react';
 import GeneralInformations from './components/GeneralInformations';
+import EducationalExperience from './components/EducationalExperience';
 import './App.css';
+
+/* 
+todo Instructions at first visit 
+ */
 
 export default function App() {
 
@@ -42,7 +47,9 @@ export default function App() {
   return (
     <div className="App">
       <h1 className='title'>WKD Steve's CV-APP</h1>
-      <GeneralInformations sendData={collectData}/>
+      <GeneralInformations sendData={collectData} />
+      <EducationalExperience  />
+      <input type='button' name='add' value="add"  />
     </div>
   );
 }

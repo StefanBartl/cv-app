@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function GeneralInformations(props){
+export default function PracticalExperience(props){
 
     const [ infos, setInfos ] = React.useState(
         {
